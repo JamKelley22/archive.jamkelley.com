@@ -1,0 +1,89 @@
+#allItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+#icons {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+#icon {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 25px;
+  width: 100%;
+}
+
+#media {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding-bottom: 10px;
+}
+
+#mediaIcon {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+#mediaIcon:hover {
+  color: rgb(8, 253, 216);
+}
+
+#ebetPic {
+  width: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#top {
+
+  background-color: white;
+}
+
+#hoverInfo {
+  text-align: center;
+  margin-top: -30px;
+  opacity: 0;
+  text-decoration: none;
+  color: rgb(8, 253, 216);
+}
+
+#link {
+  text-decoration: none;
+  color: white;
+}
+
+#link:hover > #icon{
+  opacity: 0;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-duration: .2s;
+}
+
+#link:hover > #hoverInfo{
+ opacity: 1;
+ -webkit-animation-name: fadeIn;
+ -webkit-animation-duration: .2s;
+}
+
+
+@-webkit-keyframes fadeIn {
+  0%   {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadeOut {
+  0%   {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.is-active {
+  color: rgb(8, 253, 216) !important;
+}
