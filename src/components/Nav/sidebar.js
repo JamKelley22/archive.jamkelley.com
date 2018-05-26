@@ -12,7 +12,9 @@ class Sidebar extends React.Component {
     return (
       <div id='allItems'>
         <div id='top'>
-          <img id='ebetPic' alt="Black Elephant Logo" src={Ebet}/>
+          <NavLink id='link' activeClassName='is-active' exact={true} to={routes.HOME}>
+            <img id='ebetPic' alt="Black Elephant Logo" src={Ebet}/>
+          </NavLink>
         </div>
         <div id='icons'>
           <NavLink id='link' activeClassName='is-active' exact={true} to={routes.HOME}>
@@ -23,6 +25,11 @@ class Sidebar extends React.Component {
           <NavLink id='link' activeClassName='is-active' to={routes.ABOUT}>
             <i id='icon' className="fas fa-user"/>
             <p id='hoverInfo'>About</p>
+          </NavLink>
+
+          <NavLink id='link' activeClassName='is-active' to={routes.BLOG}>
+            <i id='icon' className="fas fa-clock"/>
+            <p id='hoverInfo'>BLOG</p>
           </NavLink>
 
           <NavLink id='link' activeClassName='is-active' to={routes.SKILLS}>
@@ -45,9 +52,13 @@ class Sidebar extends React.Component {
             <p id='hoverInfo'>Resume</p>
           </NavLink>
         </div>
-        <div id='media'>
-          <a href='https://github.com/JamKelley22'><i id='mediaIcon' className="fab fa-github"/></a>
-          <a href='https://www.linkedin.com/in/jamkelley22/'><i id='mediaIcon' className="fab fa-linkedin"/></a>
+        <div id='elipses'>
+          <i id='mediaIcon' className="fas fa-ellipsis-h"/>
+        </div>
+        <div className='circle' id='circle'>
+          <a href='https://github.com/JamKelley22'><i id='icon0' className="fab fa-github circleIcon"/></a>
+          <a href='https://www.linkedin.com/in/jamkelley22/'><i id='icon45' className="fab fa-linkedin circleIcon"/></a>
+          <a href='https://stackoverflow.com/users/7732931/jameel-kelley'><i id='iconN45' className="fab fa-stack-overflow circleIcon"/></a>
         </div>
       </div>
     );

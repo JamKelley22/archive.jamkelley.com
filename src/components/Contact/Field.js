@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 // Stateless component / Functional component
 const Field = (props) => (
   <div>
-    <label>{props.label}</label>
+    <label style={{color:"white"}}>{props.label}</label>
     <input
       onChange={props.onChange}
       type={props.textarea ? 'textarea' : 'text'}

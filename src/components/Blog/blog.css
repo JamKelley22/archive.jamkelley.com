@@ -1,0 +1,170 @@
+.post {
+  text-align: left;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-right: 100px;
+  margin-left: 50px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: -5px 10px;
+  color: black;
+}
+
+#postList {
+  overflow-y: auto;
+  max-height: 100%;
+  width: 100%;
+}
+
+#postTitle {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #252627;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 5px;
+}
+
+#postTitle h1 {
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#postContent {
+
+}
+
+.post hr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#break {
+  margin-top: 0px;
+  height: 5px;
+  background-color: black;
+  border: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.post h1 {
+  text-align: center;
+}
+
+/*Start Attribution*/
+/*TODO: https://github.com/google/code-prettify*/
+pre {
+    font-size: 90%;
+    line-height: 1.2em;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+
+    height:1%;
+    width: auto;
+    display: block;
+    clear: both;
+    color: #555555;
+    padding: 1em 1em;
+    margin: auto 40px auto 40px;
+    background: #f4f4f4;
+    border: solid 1px #e1e1e1
+}
+code {
+    font-size: 90%;
+    line-height: 1.2em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+    display: inline;
+    color: #555555;
+
+    background: #f4f4f4;
+}
+
+/*End Attribution http://adis.ca/entry/2011/pretty-code-block-in-css/*/
+
+
+/*Start Attribution*/
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+/*End Attribution https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/*/
+
+/*Start Attribution*/
+#postBreakLine {
+  overflow: visible; /* For IE */
+  height: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+  border-color: #8d8d8d;
+  margin-left: 100px;
+  margin-right: 150px;
+  text-align: center;
+}
+
+#postBreakLine:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+    border-color: #8d8d8d;
+}
+
+/*End Attribution https://css-tricks.com/examples/hrs/*/
+
+img {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border-radius: 10px;
+    border-width: 10px;
+    padding: 10px;
+}
+
+/*
+#publishDate {
+
+}
+*/

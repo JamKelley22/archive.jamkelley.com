@@ -14,26 +14,8 @@
 #icon {
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 25px;
+  font-size: 40px;
   width: 100%;
-}
-
-#media {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  padding-bottom: 10px;
-}
-
-#mediaIcon {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  color: white;
-}
-
-#mediaIcon:hover {
-  color: rgb(8, 253, 216);
 }
 
 #ebetPic {
@@ -86,4 +68,88 @@
 
 .is-active {
   color: rgb(8, 253, 216) !important;
+}
+
+#mediaIcon {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 40px;
+  color: white;
+  display: block;
+  margin: auto;
+}
+
+#elipses {
+  z-index: 10;
+  height: 80px;
+}
+
+#elipses:hover ~ #circle {
+  display: block;
+}
+
+#elipses:hover > #mediaIcon {
+  color: rgb(8, 253, 216);
+}
+
+#circle:hover {
+  display: block;
+}
+
+#icon0 {
+  -webkit-animation-name: circleIcon0Move;
+}
+
+#icon45 {
+  -webkit-animation-name: circleIcon45Move;
+}
+
+#iconN45 {
+  -webkit-animation-name: circleIconN45Move;
+}
+
+.circleIcon {
+  font-size: 22px;
+  color: white;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-duration: .2s;
+}
+
+.circleIcon:hover {
+  color: rgb(8, 253, 216);
+}
+
+@-webkit-keyframes circleIcon0Move {
+  0%   {transform: translate(0px);}
+  100% {transform: translate(60px);}
+}
+
+@-webkit-keyframes circleIcon45Move {
+  0%   {transform: rotate(45deg) translate(0px);}
+  100% {transform: rotate(-45deg) translate(60px);}
+}
+
+@-webkit-keyframes circleIconN45Move {
+  0%   {transform: rotate(-45deg) translate(0px);}
+  100% {transform: rotate(45deg) translate(60px);}
+}
+
+.circle {
+  display: none;
+  position: fixed;
+  border-radius: 50%;
+  background-color: rgb(24, 24, 24);
+  width: 120px;
+  height: 120px;
+  bottom: 0;
+  left: -20px;
+}
+
+.circle a {
+  display: block;
+  position: absolute;
+  top: 50%; left: 50%;
 }

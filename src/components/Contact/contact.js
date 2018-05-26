@@ -10,7 +10,7 @@ class Contact extends React.Component {
   render() {
     return (
       <div>
-        <h1>Contact Me</h1>
+        <h1 style={{color: "white"}}>Contact Me</h1>
         <Form />
       </div>
 
