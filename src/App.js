@@ -4,7 +4,6 @@ import {
   Route,
 } from 'react-router-dom';
 //import Particles from 'react-particles-js';
-import Contentful from 'contentful';
 
 import './App.css';
 
@@ -18,16 +17,7 @@ import Resume from './components/Resume/resume.js';
 import Sidebar from './components/Nav/sidebar.js'
 
 import * as routes from './constants/routes';
-import Notifications, {notify} from 'react-notify-toast';
-//import withAuthentication from './withAuthentication';
-
-/*
-var client = Contentful.createClient({
-  space: '<space_id>',
-  accessToken: '<access_token>'
-});
-*/
-
+import Notifications from 'react-notify-toast';
 
 const App = () =>
   <Router>

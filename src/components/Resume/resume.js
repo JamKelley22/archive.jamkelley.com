@@ -4,9 +4,6 @@ import { Document } from 'react-pdf';
 import './resume.css';
 
 class Resume extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div>

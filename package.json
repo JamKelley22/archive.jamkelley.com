@@ -13,12 +13,10 @@
     "react-async-script": "^0.9.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.0",
-    "react-google-recaptcha": "^0.11.0",
     "react-markdown": "^3.3.0",
     "react-notify-toast": "^0.4.0",
     "react-particles-js": "^2.1.1",
     "react-pdf": "^3.0.4",
-    "react-recaptcha": "^2.3.7",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1"
   },

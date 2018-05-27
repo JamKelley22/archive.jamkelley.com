@@ -1,8 +1,8 @@
 import React from 'react'
 import * as Markdown from 'react-markdown'
 import moment from 'moment'
-import { Button } from 'react-bootstrap'
 import './blog.css'
+import './post.css'
 
 class Post extends React.Component {
   state = {
@@ -25,12 +25,10 @@ class Post extends React.Component {
     let embedToken = '%%%';
     let lines = this.props.content.split("\n");
     let md = '';
-    let tracker = 0;
 
     //=========================================
-    let allEmbeded = lines.map((line,i) => {
+    let allEmbeded = lines.forEach((line,i) => {
       if(line.substring(0,3) === embedToken) {
-        console.log("Found one @ line # " + i);
         let embedSrc = line.substring(3);
         let tempMD = md;
         md = '';
@@ -52,34 +50,65 @@ class Post extends React.Component {
         <Markdown source={md} id='postContent'/>
       </React.Fragment>
     );
+  }
 
-    /*
-    for (var i = 0; i < lines.length; i++) {
-      if(lines[i].substring(0,3) == embedToken) {
-        console.log("Found one @ line # " + i);
-      }
-    }
-    return (
-      <Markdown source={this.props.content} id='postContent'/>
-    );
-    */
+  getHighlightedText = (text, higlight) => {
+    let escaped = this.escapeRegExp(higlight);
+    // Split on higlight term and include term into parts, ignore case
+    let regx = new RegExp(`(${escaped})`, 'gi');
+    let parts = text.split(regx);
+    return <span> { parts.map((part, i) =>
+        <span key={i} style={part.toLowerCase() === higlight.toLowerCase() ? { fontWeight: 'bold' } : {} }>
+            { part }
+        </span>)
+    } </span>;
+  }
+
+  escapeRegExp = (string) => {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
   }
 
   render() {
     let embededContent = this.getEmbededContent();
+    let searchedTitle = this.props.title;
+    let searchedDescription = this.props.description;
+    if(this.props.searchTerm.length > 0) {
+      searchedTitle = this.getHighlightedText(this.props.title,this.props.searchTerm);
+      searchedDescription = this.getHighlightedText(this.props.description,this.props.searchTerm);
+    }
+
+    let Tags;
+
+    if(this.props.tags) {
+      let tagList = this.props.tags.map((tag,i) =>
+        <p id='tag' key={i} onClick={() => this.props.addTag(tag)}>{tag}</p>
+      );
+
+      Tags =
+        <div id='tags'>{tagList}</div>
+    }
+    else {
+      Tags =
+        <div id='tags'></div>
+    }
+
     return (
       <div className="post">
-        <div id='postTitle' onClick={this.togglePost}><h1>{this.props.title}</h1></div>
+        <div id='postTitle' onClick={this.togglePost}><h1>{searchedTitle}</h1></div>
+        {!this.state.isOpen && this.props.image && <img id='coverImage' alt="Post Cover" src={this.props.image.fields.file.url}/>}
+        {!this.state.isOpen && <h4 id='description'>{searchedDescription}</h4>}
         {this.state.isOpen && embededContent}
         <hr id='break'/>
-          <p id='publishDate'>
-            {moment(this.props.date).calendar(null, {
-              sameDay: '[Today]',
-              lastDay: '[Yesterday]',
-              lastWeek: '[Last] dddd',
-              sameElse: 'MMM Do YYYY'
-            })}
-          </p>
+        {Tags}
+        <p id='publishDate'>
+          Posted:&nbsp;
+          {moment(this.props.date).calendar(null, {
+            sameDay: '[Today]',
+            lastDay: '[Yesterday]',
+            lastWeek: '[Last] dddd',
+            sameElse: 'MMM Do YYYY'
+          })}
+        </p>
       </div>
     );
   }

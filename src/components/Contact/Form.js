@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 // Externals
 import Field from './Field';
 import firebase from 'firebase';
-import Notifications, {notify} from 'react-notify-toast';
-import Recaptcha from 'react-recaptcha';
+import {notify} from 'react-notify-toast';
 
 // Initialize Firebase
 var config = {
