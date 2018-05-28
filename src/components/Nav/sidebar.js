@@ -8,6 +8,21 @@ import './sidebar.css';
 import Ebet from '../../Images/ebet.png';
 
 class Sidebar extends React.Component {
+  state = {
+    socialMediaVisible: false
+  }
+
+  handleSocialMediaButtnClick = target => {
+    window.open(target,'_blank');
+  }
+
+  toggleSocialMediaVisible = (e) => {
+    e.preventDefault();
+    this.setState({
+      socialMediaVisible: !this.state.socialMediaVisible
+    })
+  }
+
   render() {
     return (
       <div id='allItems'>
@@ -29,7 +44,7 @@ class Sidebar extends React.Component {
 
           <NavLink id='link' activeClassName='is-active' to={routes.BLOG}>
             <i id='icon' className="fas fa-clock"/>
-            <p id='hoverInfo'>BLOG</p>
+            <p id='hoverInfo'>Blog</p>
           </NavLink>
 
           <NavLink id='link' activeClassName='is-active' to={routes.SKILLS}>
@@ -53,13 +68,26 @@ class Sidebar extends React.Component {
           </NavLink>
         </div>
         <div id='elipses'>
-          <i id='mediaIcon' className="fas fa-ellipsis-h"/>
+          <button id='elipsesLink' onClick={(e) => this.toggleSocialMediaVisible(e)}>
+            <i id='mediaIcon' className="fas fa-ellipsis-h"/>
+          </button>
         </div>
-        <div className='circle' id='circle'>
-          <a href='https://github.com/JamKelley22'><i id='icon0' className="fab fa-github circleIcon"/></a>
-          <a href='https://www.linkedin.com/in/jamkelley22/'><i id='icon45' className="fab fa-linkedin circleIcon"/></a>
-          <a href='https://stackoverflow.com/users/7732931/jameel-kelley'><i id='iconN45' className="fab fa-stack-overflow circleIcon"/></a>
-        </div>
+        {
+          this.state.socialMediaVisible &&
+          <div className='circle' id='circle'>
+            <div onClick={() => this.handleSocialMediaButtnClick("https://github.com/JamKelley22")}><i id='icon0' className="fab fa-github circleIcon"/></div>
+            <div onClick={() => this.handleSocialMediaButtnClick("https://www.linkedin.com/in/jamkelley22/")}><i id='icon45' className="fab fa-linkedin circleIcon"/></div>
+            <div onClick={() => this.handleSocialMediaButtnClick("https://stackoverflow.com/users/7732931/jameel-kelley")}><i id='iconN45' className="fab fa-stack-overflow circleIcon"/></div>
+          </div>
+        }
+        {
+          !this.state.socialMediaVisible &&
+          <div className='circle' id='circle'>
+            <div onClick={() => this.handleSocialMediaButtnClick("https://github.com/JamKelley22")}><i id='icon0' className="fab fa-github circleIcon"/></div>
+            <div onClick={() => this.handleSocialMediaButtnClick("https://www.linkedin.com/in/jamkelley22/")}><i id='icon45' className="fab fa-linkedin circleIcon"/></div>
+            <div onClick={() => this.handleSocialMediaButtnClick("https://stackoverflow.com/users/7732931/jameel-kelley")}><i id='iconN45' className="fab fa-stack-overflow circleIcon"/></div>
+          </div>
+        }
       </div>
     );
   }

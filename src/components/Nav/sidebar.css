@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+
 }
 
 #icons {
@@ -55,6 +56,12 @@
  -webkit-animation-duration: .2s;
 }
 
+#elipsesLink {
+  background-color: #181818;
+  border: 0px;
+  outline: none;
+}
+
 
 @-webkit-keyframes fadeIn {
   0%   {opacity: 0;}
@@ -82,6 +89,8 @@
 #elipses {
   z-index: 10;
   height: 80px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #elipses:hover ~ #circle {
@@ -148,8 +157,17 @@
   left: -20px;
 }
 
-.circle a {
+.circle div {
   display: block;
   position: absolute;
   top: 50%; left: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  #hoverInfo {
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 }

@@ -92,6 +92,20 @@ class Post extends React.Component {
         <div id='tags'></div>
     }
 
+    let PostDate = moment(this.props.date).calendar(null, {
+      sameDay: '[Today]',
+      lastDay: '[Yesterday]',
+      lastWeek: '[Last] dddd',
+      sameElse: 'MMM Do YYYY'
+    })
+
+    let UpdateDate = moment(this.props.updatedDate).calendar(null, {
+      sameDay: '[Today]',
+      lastDay: '[Yesterday]',
+      lastWeek: '[Last] dddd',
+      sameElse: 'MMM Do YYYY'
+    })
+
     return (
       <div className="post">
         <div id='postTitle' onClick={this.togglePost}><h1>{searchedTitle}</h1></div>
@@ -101,13 +115,10 @@ class Post extends React.Component {
         <hr id='break'/>
         {Tags}
         <p id='publishDate'>
-          Posted:&nbsp;
-          {moment(this.props.date).calendar(null, {
-            sameDay: '[Today]',
-            lastDay: '[Yesterday]',
-            lastWeek: '[Last] dddd',
-            sameElse: 'MMM Do YYYY'
-          })}
+          {"Posted: "}
+          {PostDate}
+          {PostDate !== UpdateDate && " | Updated: " }
+          {PostDate !== UpdateDate && UpdateDate}
         </p>
       </div>
     );

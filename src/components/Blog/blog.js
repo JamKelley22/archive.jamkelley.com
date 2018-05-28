@@ -1,7 +1,7 @@
 import React from 'react'
 import * as contentful from 'contentful'
 import Post from './post.js';
-import { FormControl, Modal, Button } from 'react-bootstrap'
+import { FormControl, Modal } from 'react-bootstrap'
 
 import './blog.css'
 
@@ -23,6 +23,7 @@ class Blog extends React.Component {
 
   componentDidMount() {
     this.fetchPosts().then(this.setPosts);
+    console.log(this.props.sidebar);
   }
 
   fetchPosts = () => this.client.getEntries()
@@ -45,6 +46,7 @@ class Blog extends React.Component {
         tags: newtagSet
       })
     })
+    console.log(response.items);
   }
 
   handleSearchChange = (e) => {
@@ -199,32 +201,13 @@ class Blog extends React.Component {
             {SearchTagList}
             {this.state.filteredPosts.length > 0 && this.state.filteredPosts.map((obj, i) =>
               {
-                if(i < this.state.filteredPosts.length - 1) {
-                  return(
-                    <React.Fragment key={i}>
-                      <div id='singlePost'>
-                        <Post
-                          id='singlePost'
-                          date={obj.sys.createdAt}
-                          title={obj.fields.title}
-                          content={obj.fields.content}
-                          image={obj.fields.image}
-                          description={obj.fields.description}
-                          tags={obj.fields.tags}
-                          searchTerm={this.state.searchTerm}
-                          addTag={this.addTag}
-                        />
-                      </div>
-                      <hr id='postBreakLine'/>
-                    </React.Fragment>
-                  );
-                }
-                else {
-                  return (
-                    <div id='singlePost' key={i}>
+                return(
+                  <React.Fragment key={i}>
+                    <div id='singlePost'>
                       <Post
                         id='singlePost'
                         date={obj.sys.createdAt}
+                        updatedDate={obj.sys.updatedAt}
                         title={obj.fields.title}
                         content={obj.fields.content}
                         image={obj.fields.image}
@@ -234,8 +217,10 @@ class Blog extends React.Component {
                         addTag={this.addTag}
                       />
                     </div>
-                  );
-                }
+                    {i < this.state.filteredPosts.length - 1 && <hr id='postBreakLine'/>}
+
+                  </React.Fragment>
+                );
               }
             )}
             {this.state.filteredPosts.length === 0 &&

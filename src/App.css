@@ -12,10 +12,33 @@
   max-width: 75px;
   min-width: 75px;
   overflow: hidden;
+  box-shadow: 1px 0px rgb(37, 38, 39);
+  z-index: 10;
 }
+
+/*
+#sidebarHide {
+  background-color: rgb(24, 24, 24);
+  max-width: 75px;
+  min-width: 75px;
+  overflow: hidden;
+  box-shadow: 1px 0px rgb(37, 38, 39);
+  z-index: 10;
+
+  -webkit-animation-name: hideSidebar;
+  -webkit-animation-duration: 2s;
+}
+
+@-webkit-keyframes hideSidebar {
+  0%   {transform: translate(0px);}
+  100% {transform: translate(-75px);}
+}
+*/
+
 #content{
   background-color: rgb(37, 38, 39);
   width: 100%;
+  z-index: -10;
 }
 
 #particles {
@@ -50,9 +73,86 @@
   padding: 10px;
   text-align: center;
 }
-/*
-.pullForward {
-  z-index: 100;
-  position: relative;
+
+#toggleSidebar {
+  display: none;
 }
-*/
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .container {
+    width: 102vw;
+    transform: translateX(-1px);
+  }
+  #content {
+    overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #toggleSidebar {
+    display:block;
+    position: absolute;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 75px;
+    transform: translate(-50%, -50%);
+    height: 55px;
+    width: 35px;
+    background-color: rgb(24, 24, 24);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+  }
+
+  #toggleSidebar p {
+    text-align: right;
+    color: white;
+    font-size: 20px;
+
+    margin: 0;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    transform: translate(-50%, -50%);
+  }
+
+  #toggleSidebarLeft {
+    display:block;
+    position: absolute;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 55px;
+    width: 35px;
+    background-color: rgb(24, 24, 24);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+  }
+
+  #toggleSidebarLeft p {
+    text-align: right;
+    color: white;
+    font-size: 20px;
+
+    margin: 0;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    transform: translate(-50%, -50%);
+    transform: rotate(180deg);
+  }
+
+  #sidebarHide {
+    background-color: rgb(24, 24, 24);
+    max-width: 75px;
+    min-width: 75px;
+    overflow: hidden;
+    box-shadow: 1px 0px rgb(37, 38, 39);
+    z-index: 10;
+    display: none;
+  }
+}

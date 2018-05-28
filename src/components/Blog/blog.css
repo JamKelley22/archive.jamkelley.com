@@ -107,6 +107,7 @@
   background-color: black;
   color: white;
   border: 0px;
+  box-shadow: none;
 }
 
 .modal-content {

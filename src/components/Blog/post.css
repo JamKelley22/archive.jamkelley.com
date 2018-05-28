@@ -29,11 +29,20 @@
   cursor: pointer;
 }
 
+#postTitle:hover {
+    background-color: #616161;
+}
+
 #postTitle h1 {
   color: white;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+
+#postTitle:hover h1{
+
 }
 
 #postContent {
