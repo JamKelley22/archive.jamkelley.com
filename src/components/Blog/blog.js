@@ -22,16 +22,29 @@ class Blog extends React.Component {
   })
 
   componentDidMount() {
-    this.fetchPosts().then(this.setPosts);
-    console.log(this.props.sidebar);
+    this.fetchPosts().then((response) => this.filterPostTypes(response.items));
   }
 
   fetchPosts = () => this.client.getEntries()
 
-  setPosts = response => {
+  filterPostTypes = (items) => {
+    console.log(items);
+    let blogPosts = items.filter(this.checkIsBlogType);
+    this.setPosts(blogPosts);
+  }
+
+  checkIsBlogType = (post) => {
+    let blogType = "blog";
+    if(post.sys.contentType.sys.id === blogType) {
+      return true;
+    }
+    return false;
+  }
+
+  setPosts = blogPosts => {
     this.setState({
-      posts: response.items,
-      filteredPosts: response.items,
+      posts: blogPosts,
+      filteredPosts: blogPosts,
       isLoading: false
     }, () => {
       var newtagSet = new Set(this.state.tags);
@@ -46,7 +59,6 @@ class Blog extends React.Component {
         tags: newtagSet
       })
     })
-    console.log(response.items);
   }
 
   handleSearchChange = (e) => {

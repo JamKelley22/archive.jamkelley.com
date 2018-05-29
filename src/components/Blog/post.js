@@ -26,18 +26,16 @@ class Post extends React.Component {
     let lines = this.props.content.split("\n");
     let md = '';
 
+    let embedMD = [];
+
     //=========================================
     let allEmbeded = lines.forEach((line,i) => {
       if(line.substring(0,3) === embedToken) {
         let embedSrc = line.substring(3);
         let tempMD = md;
         md = '';
-        return (
-          <React.Fragment key={i}>
-            <Markdown source={tempMD} id='postContent'/>
-            <img src={embedSrc} alt= {"Inline Image: " + embedSrc}/>
-          </React.Fragment>
-        );
+        embedMD.push(<Markdown source={tempMD} id='postContent'/>);
+        embedMD.push(<img src={embedSrc} alt= {"Inline Image: " + embedSrc}/>);
       }
       else {
         md += "\n" + line;
@@ -46,7 +44,7 @@ class Post extends React.Component {
     //========================================
     return (
       <React.Fragment>
-        {allEmbeded}
+        {embedMD}
         <Markdown source={md} id='postContent'/>
       </React.Fragment>
     );
