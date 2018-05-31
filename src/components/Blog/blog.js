@@ -28,7 +28,6 @@ class Blog extends React.Component {
   fetchPosts = () => this.client.getEntries()
 
   filterPostTypes = (items) => {
-    console.log(items);
     let blogPosts = items.filter(this.checkIsBlogType);
     this.setPosts(blogPosts);
   }
@@ -225,6 +224,7 @@ class Blog extends React.Component {
                         image={obj.fields.image}
                         description={obj.fields.description}
                         tags={obj.fields.tags}
+                        authors={obj.fields.authors}
                         searchTerm={this.state.searchTerm}
                         addTag={this.addTag}
                       />

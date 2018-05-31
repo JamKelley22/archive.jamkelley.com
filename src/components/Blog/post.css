@@ -176,3 +176,48 @@ img {
 #tags {
   display: flex;
 }
+
+#postUpdateSymbol {
+  background-color: #4070ff;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px;
+  margin-left: 2px;
+
+  -webkit-animation-name: blink;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#postUpdate {
+  display: inline-block;
+}
+
+#postUpdate:hover #postUpdateSymbol{
+    animation: none !important;
+    background-color: rgb(8, 253, 216);
+}
+
+@-webkit-keyframes blink {
+  0%   {background-color: #4070ff;}
+  50%   {background-color: rgb(0, 200, 170);}
+  100% {background-color: #4070ff;}
+}
+
+#authors {
+  float: left;
+  display: flex;
+}
+
+#author {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  padding: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-right: 5px;
+}

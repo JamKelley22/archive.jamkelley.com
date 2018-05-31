@@ -25,7 +25,6 @@ class App extends React.Component {
   }
 
   doToggleSidebar = () => {
-    console.log("Here");
     this.setState({
       sidebarVisible: !this.state.sidebarVisible
     })

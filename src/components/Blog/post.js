@@ -1,6 +1,7 @@
 import React from 'react'
 import * as Markdown from 'react-markdown'
 import moment from 'moment'
+import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 import './blog.css'
 import './post.css'
 
@@ -29,13 +30,13 @@ class Post extends React.Component {
     let embedMD = [];
 
     //=========================================
-    let allEmbeded = lines.forEach((line,i) => {
+    lines.forEach((line,i) => {
       if(line.substring(0,3) === embedToken) {
         let embedSrc = line.substring(3);
         let tempMD = md;
         md = '';
-        embedMD.push(<Markdown source={tempMD} id='postContent'/>);
-        embedMD.push(<img src={embedSrc} alt= {"Inline Image: " + embedSrc}/>);
+        embedMD.push(<Markdown source={tempMD} id='postContent' key={i}/>);
+        embedMD.push(<img src={embedSrc} alt= {"Inline Image: " + embedSrc} key={i}/>);
       }
       else {
         md += "\n" + line;
@@ -64,6 +65,23 @@ class Post extends React.Component {
 
   escapeRegExp = (string) => {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+  }
+
+  getAuthors = () => {
+    let authorArr = [];
+    if(!this.props.authors) {
+      return;
+    }
+    this.props.authors.forEach((author,i) => {
+      let split = author.split(" ");
+      let initials = split.map(name => name.substring(0,1));
+      authorArr.push(
+        <div id='author' key={i}>
+          {initials.join("")}
+        </div>
+      );
+    })
+    return authorArr;
   }
 
   render() {
@@ -104,6 +122,11 @@ class Post extends React.Component {
       sameElse: 'MMM Do YYYY'
     })
 
+    let UpdateDateTooltip =
+      <Tooltip id="tooltip">
+        {"Updated: " + UpdateDate}
+      </Tooltip>;
+
     return (
       <div className="post">
         <div id='postTitle' onClick={this.togglePost}><h1>{searchedTitle}</h1></div>
@@ -112,15 +135,27 @@ class Post extends React.Component {
         {this.state.isOpen && embededContent}
         <hr id='break'/>
         {Tags}
-        <p id='publishDate'>
-          {"Posted: "}
-          {PostDate}
-          {PostDate !== UpdateDate && " | Updated: " }
-          {PostDate !== UpdateDate && UpdateDate}
-        </p>
+        <div id='publishDate'>
+          <div id='authors'>
+            {this.getAuthors()}
+          </div>
+          {"Posted: " + PostDate}
+          {PostDate !== UpdateDate &&
+            <OverlayTrigger placement="right" overlay={UpdateDateTooltip}>
+              <div id='postUpdate'><div id='postUpdateSymbol'/></div>
+            </OverlayTrigger>
+          }
+        </div>
       </div>
     );
   }
 }
 
 export default Post;
+
+/*
+{"Posted: "}
+{PostDate}
+{PostDate !== UpdateDate && " | Updated: " }
+{PostDate !== UpdateDate && UpdateDate}
+*/
