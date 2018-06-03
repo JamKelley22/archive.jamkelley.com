@@ -1,36 +1,23 @@
 #postList {
   overflow-y: auto;
-  max-height: 100%;
+  height: 87%;
   width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
 }
 
-/*Start Attribution*/
+#postListSelected {
+  display: block;
+}
+
+#topBlog {
+  height: 13%;
+}
+
 #postBreakLine {
-  overflow: visible; /* For IE */
-  height: 30px;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px 0 0 0;
-  border-radius: 20px;
-  border-color: #8d8d8d;
-  margin-left: 100px;
-  margin-right: 150px;
-  text-align: center;
+  display: none;
 }
-
-#postBreakLine:before { /* Not really supposed to work, but does */
-    display: block;
-    content: "";
-    height: 30px;
-    margin-top: -31px;
-    border-style: solid;
-    border-color: black;
-    border-width: 0 0 1px 0;
-    border-radius: 20px;
-    border-color: #8d8d8d;
-}
-
-/*End Attribution https://css-tricks.com/examples/hrs/*/
 
 #searchTagList {
   display: flex;
@@ -149,5 +136,36 @@
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
+  #postList {
+    display: block;
+  }
 
+  /*Start Attribution*/
+  #postBreakLine {
+    display: block;
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+    border-color: #8d8d8d;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  #postBreakLine:before { /* Not really supposed to work, but does */
+      display: block;
+      content: "";
+      height: 30px;
+      margin-top: -31px;
+      border-style: solid;
+      border-color: black;
+      border-width: 0 0 1px 0;
+      border-radius: 20px;
+      border-color: #8d8d8d;
+  }
+  /*End Attribution https://css-tricks.com/examples/hrs/*/
 }

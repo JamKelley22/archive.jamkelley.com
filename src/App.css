@@ -16,29 +16,10 @@
   z-index: 10;
 }
 
-/*
-#sidebarHide {
-  background-color: rgb(24, 24, 24);
-  max-width: 75px;
-  min-width: 75px;
-  overflow: hidden;
-  box-shadow: 1px 0px rgb(37, 38, 39);
-  z-index: 10;
-
-  -webkit-animation-name: hideSidebar;
-  -webkit-animation-duration: 2s;
-}
-
-@-webkit-keyframes hideSidebar {
-  0%   {transform: translate(0px);}
-  100% {transform: translate(-75px);}
-}
-*/
-
 #content{
   background-color: rgb(37, 38, 39);
   width: 100%;
-  z-index: 0;
+  overflow-y: auto;
 }
 
 #particles > div {
@@ -78,6 +59,7 @@
   #content {
     overflow-y: scroll; /* has to be scroll, not auto */
     -webkit-overflow-scrolling: touch;
+    z-index: -10;/* IDK why this needs to happen onlu on mobile???*/
   }
 
   #toggleSidebar {

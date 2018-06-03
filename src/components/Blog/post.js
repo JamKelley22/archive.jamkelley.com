@@ -1,7 +1,7 @@
 import React from 'react'
 import * as Markdown from 'react-markdown'
 import moment from 'moment'
-import { OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { OverlayTrigger, Tooltip, Button } from 'react-bootstrap'
 import './blog.css'
 import './post.css'
 
@@ -17,6 +17,12 @@ class Post extends React.Component {
   }
 
   togglePost = () => {
+    if(this.state.isOpen) {
+      this.props.selectPost(null);//toggle close
+    }
+    else {
+      this.props.selectPost(this.props.index);
+    }
     this.setState({
       isOpen: !this.state.isOpen
     })
@@ -35,8 +41,12 @@ class Post extends React.Component {
         let embedSrc = line.substring(3);
         let tempMD = md;
         md = '';
-        embedMD.push(<Markdown source={tempMD} id='postContent' key={i}/>);
-        embedMD.push(<img src={embedSrc} alt= {"Inline Image: " + embedSrc} key={i}/>);
+        embedMD.push(
+          <React.Fragment key={i}>
+            <Markdown source={tempMD} id='postContent'/>
+            <img src={embedSrc} alt= {"Inline Image: " + embedSrc}/>
+          </React.Fragment>
+        );
       }
       else {
         md += "\n" + line;
@@ -84,7 +94,19 @@ class Post extends React.Component {
     return authorArr;
   }
 
+  handleClosePost = () => {
+    this.props.selectPost(null);
+    this.setState({
+      isOpen: false
+    })
+  }
+
   render() {
+    console.log("Index: " + this.props.index);
+    console.log("visibility: " + this.props.visibility);
+    /*
+    console.log("selectPost: " + this.props.selectPost);
+    */
     let embededContent = this.getEmbededContent();
     let searchedTitle = this.props.title;
     let searchedDescription = this.props.description;
@@ -128,24 +150,30 @@ class Post extends React.Component {
       </Tooltip>;
 
     return (
-      <div className="post">
-        <div id='postTitle' onClick={this.togglePost}><h1>{searchedTitle}</h1></div>
-        {!this.state.isOpen && this.props.image && <img id='coverImage' alt="Post Cover" src={this.props.image.fields.file.url}/>}
-        {!this.state.isOpen && <h4 id='description'>{searchedDescription}</h4>}
-        {this.state.isOpen && embededContent}
-        <hr id='break'/>
-        {Tags}
-        <div id='publishDate'>
-          <div id='authors'>
-            {this.getAuthors()}
+      <div>
+        <div id='post' className={this.props.visibility}>
+          <button id='postTitle' onClick={this.togglePost}><h1>{searchedTitle}</h1></button>
+          {!this.state.isOpen && this.props.image && <img id='coverImage' alt="Post Cover" src={this.props.image.fields.file.url}/>}
+          {!this.state.isOpen && <h4 id='description'>{searchedDescription}</h4>}
+          {this.state.isOpen && embededContent}
+          <hr id='break'/>
+          {Tags}
+          <div id='publishDate'>
+            <div id='authors'>
+              {this.getAuthors()}
+            </div>
+            {"Posted: " + PostDate}
+            {PostDate !== UpdateDate &&
+              <OverlayTrigger placement="bottom" overlay={UpdateDateTooltip}>
+                <div id='postUpdate'><div id='postUpdateSymbol'/></div>
+              </OverlayTrigger>
+            }
           </div>
-          {"Posted: " + PostDate}
-          {PostDate !== UpdateDate &&
-            <OverlayTrigger placement="right" overlay={UpdateDateTooltip}>
-              <div id='postUpdate'><div id='postUpdateSymbol'/></div>
-            </OverlayTrigger>
-          }
         </div>
+        {
+          this.props.selectedPostNum === this.props.index &&
+          <Button id='closePostBtn' bsStyle='danger' bsSize='xsmall' onClick={this.handleClosePost}>Close Post</Button>
+        }
       </div>
     );
   }

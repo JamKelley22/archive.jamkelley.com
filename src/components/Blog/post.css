@@ -1,4 +1,4 @@
-.post {
+#post {
   text-align: left;
   background-color: white;
   border-top-left-radius: 10px;
@@ -12,9 +12,18 @@
   box-shadow: -10px 10px;
   color: black;
   margin: auto;
-  width: 50%;
+  width: 90%;
   max-width: 500px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.visiblePost {
+  max-width: 100% !important;
+}
+
+.invisiblePost {
+  /*Add animation to 0% width?*/
+  display: none;
 }
 
 #postTitle {
@@ -27,6 +36,10 @@
   padding-right: 30px;
   border-radius: 5px;
   cursor: pointer;
+  outline: none;
+  border: none;
+  margin: auto;
+  width: 100%;
 }
 
 #postTitle:hover {
@@ -63,7 +76,7 @@ table, th, td {
     border: 1px solid black;
 }
 
-.post h1 {
+#post h1 {
   text-align: center;
 }
 
@@ -138,7 +151,7 @@ img {
   display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width: 60%;
     border-radius: 20px;
     padding: 10px;
 }
@@ -220,4 +233,16 @@ img {
   padding-left: 4px;
   padding-right: 4px;
   margin-right: 5px;
+}
+
+#closePostBtn {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 800px) {
+
 }

@@ -13,7 +13,8 @@ class Blog extends React.Component {
     isLoading: true,
     tags: new Set(),
     searchTags: new Set(),
-    searchTagModalIsShowing: false
+    searchTagModalIsShowing: false,
+    selectedPostNum: null
   }
 
   client = contentful.createClient({
@@ -163,6 +164,13 @@ class Blog extends React.Component {
     );
   }
 
+  selectPost = (i) => {
+    console.log("Index Selected: " + i);
+    this.setState({
+      selectedPostNum: i
+    })
+  }
+
   render() {
     const SearchBar =
       <form onSubmit={e => { e.preventDefault(); }}>
@@ -191,6 +199,9 @@ class Blog extends React.Component {
     TagList =
       <div id='modalTagList'>{tagList}</div>
 
+    let visiblePostClassName = ' visiblePost';
+    let invisiblePostClassName = ' invisiblePost';
+
     if(!this.state.isLoading) {
       return (
         <React.Fragment>
@@ -207,16 +218,25 @@ class Blog extends React.Component {
             </Modal.Footer>
           </Modal>
 
-          <div id='postList'>
+          <div id='topBlog'>
             {SearchBar}
             {SearchTagList}
+          </div>
+          <div id={this.state.selectedPostNum === null ? 'postList' : 'postListSelected'}>
             {this.state.filteredPosts.length > 0 && this.state.filteredPosts.map((obj, i) =>
               {
                 return(
                   <React.Fragment key={i}>
                     <div id='singlePost'>
                       <Post
-                        id='singlePost'
+                        index={i}
+                        visibility={
+                          this.state.selectedPostNum !== null ?
+                            this.state.selectedPostNum === i ? ' visiblePost' : ' invisiblePost'
+                          :
+                          ' visiblePost'
+                        }
+                        selectedPostNum={this.state.selectedPostNum}
                         date={obj.sys.createdAt}
                         updatedDate={obj.sys.updatedAt}
                         title={obj.fields.title}
@@ -227,9 +247,10 @@ class Blog extends React.Component {
                         authors={obj.fields.authors}
                         searchTerm={this.state.searchTerm}
                         addTag={this.addTag}
+                        selectPost={this.selectPost}
                       />
                     </div>
-                    {i < this.state.filteredPosts.length - 1 && <hr id='postBreakLine'/>}
+                    {i < this.state.filteredPosts.length - 1 && this.state.selectedPostNum === null && <hr id='postBreakLine'/>}
 
                   </React.Fragment>
                 );
