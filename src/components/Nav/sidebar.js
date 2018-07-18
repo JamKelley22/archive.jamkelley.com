@@ -57,6 +57,11 @@ class Sidebar extends React.Component {
             <p id='hoverInfo'>Work</p>
           </NavLink>
 
+          <NavLink id='link' activeClassName='is-active' to={routes.PROJECTS}>
+            <i id='icon' className="fas fa-project-diagram"/>
+            <p id='hoverInfo'>Projects</p>
+          </NavLink>
+
           <NavLink id='link' activeClassName='is-active' to={routes.CONTACT}>
             <i id='icon' className="fas fa-envelope"/>
             <p id='hoverInfo'>Contact Me</p>
