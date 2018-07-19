@@ -15,8 +15,9 @@
 #icon {
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 40px;
+  font-size: 20px;
   width: 100%;
+  text-align: center;
 }
 
 #ebetPic {
@@ -177,7 +178,7 @@
     width: 50%;
   }
   .circle {
-    
+
   }
 
   #icon0 {
