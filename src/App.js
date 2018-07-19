@@ -12,6 +12,7 @@ import Blog from './components/Blog/blog.js';
 import About from './components/About/about.js';
 import Skills from './components/Skills/skills.js';
 import Work from './components/Work/work.js';
+import Projects from './components/Projects/projects.js';
 import Contact from './components/Contact/contact.js';
 import Resume from './components/Resume/resume.js';
 import Sidebar from './components/Nav/sidebar.js'
@@ -89,6 +90,7 @@ class App extends React.Component {
             <Route exact path={routes.ABOUT} component={() => <About/>} />
             <Route exact path={routes.SKILLS} component={() => <Skills/>} />
             <Route exact path={routes.WORK} component={() => <Work/>} />
+            <Route exact path={routes.PROJECTS} component={() => <Projects/>} />
             <Route exact path={routes.RESUME} component={() => <Resume/>} />
           </div>
 
