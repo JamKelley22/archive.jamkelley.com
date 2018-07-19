@@ -24,6 +24,25 @@ class App extends React.Component {
     sidebarVisible: true
   }
 
+  componentDidMount() {
+    this.getData()
+    .then((response) => {
+      console.log(response.getFortuneCookie);
+    })
+/*
+    fetch("http://localhost:3001/graphql?query={getFortuneCookie}")
+    .then((res) => {
+      console.log(res.json());
+    })
+*/
+  }
+
+  getData = async() => {
+    const response = await fetch("http://localhost:3001/graphql?query={getFortuneCookie}");
+    const json = await response.json();
+    return json.data;
+  }
+
   doToggleSidebar = () => {
     this.setState({
       sidebarVisible: !this.state.sidebarVisible
