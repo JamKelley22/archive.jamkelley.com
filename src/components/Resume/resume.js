@@ -1,14 +1,15 @@
 import React from 'react';
-import { Document } from 'react-pdf';
+import { Document, Page } from 'react-pdf';
 
 import './resume.css';
 
 class Resume extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Resume</h1>
-        <Document file="Jameel.pdf" style={{height: "100%"}}/>
+      <div id='resumeDoc'>
+        <Document file="Jameel.pdf">
+          <Page pageNumber={1} scale={1}/>
+        </Document>
       </div>
 
     );
