@@ -163,6 +163,7 @@ img {
 #description {
   text-align: center;
   margin-top: 0px;
+  width: 100% !important;
 }
 
 #publishDate {
@@ -230,8 +231,8 @@ img {
   color: white;
   border-radius: 15px;
   padding: 3px;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
   margin-right: 5px;
 }
 

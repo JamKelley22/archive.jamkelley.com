@@ -15,7 +15,7 @@ class ProjectTile extends React.Component {
           <div id='left'>
             <p id='tileStatus'>Status: {this.props.status}</p>
             <p id='tileDesc'>{this.props.desc}</p>
-            <p id='tileTech'>Tech: {this.props.tech}</p>
+            <p id='tileTech'>Tech: {this.props.tech.join(', ')}</p>
           </div>
           <div id='right'>
             {this.props.image && <img src={this.props.image}/> || <img/>}

@@ -12,6 +12,10 @@
 
 #postListSelected {
   display: block;
+  overflow-y: auto;
+  height: 95%;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 #topBlog {

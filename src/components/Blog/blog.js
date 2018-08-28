@@ -218,10 +218,14 @@ class Blog extends React.Component {
             </Modal.Footer>
           </Modal>
 
-          <div id='topBlog'>
-            {SearchBar}
-            {SearchTagList}
-          </div>
+          {
+            this.state.selectedPostNum === null
+            &&
+            <div id='topBlog'>
+              {SearchBar}
+              {SearchTagList}
+            </div>
+          }
           <div id={this.state.selectedPostNum === null ? 'postList' : 'postListSelected'}>
             {this.state.filteredPosts.length > 0 && this.state.filteredPosts.map((obj, i) =>
               {

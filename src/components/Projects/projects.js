@@ -20,23 +20,38 @@ class Projects extends React.Component {
   render() {
     return (
       <div>
-        <h1>Projects</h1>
         <div id='projectList'>
           <ProjectTile
-            name="Cheerleader"
-            desc="Saving the world and your butt"
+            name="PunchClock"
+            desc="Track your time spent working!"
             status="Ended"
-            tech="Superpowers"
+            tech={["Java", "JavaFX"]}
             image="https://i.ytimg.com/vi/yaqe1qesQ8c/maxresdefault.jpg"
             link="https://www.youtube.com/watch?v=w5tWYmIOWGk"
             github="https://github.com/JamKelley22"
             showMailingList={this.showMailingList}
           />
           <ProjectTile
-            name="Exterminate"
-            desc="Killing all things"
+            name="Mood Track"
+            desc=""
             status="Ongoing"
-            tech="Lasers"
+            tech={["React-Native"]}
+            link=""
+            showMailingList={this.showMailingList}
+          />
+          <ProjectTile
+            name="CooL:SLiCE SPASS"
+            desc=""
+            status="Ongoing"
+            tech={["React-Native"]}
+            link="https://coolslice-spass.herokuapp.com"
+            showMailingList={this.showMailingList}
+          />
+          <ProjectTile
+            name="ISU Cytes"
+            desc=""
+            status="Ongoing"
+            tech={["Spring", "React"]}
             link="https://www.youtube.com/watch?v=k3sgjbpK1io"
             showMailingList={this.showMailingList}
           />

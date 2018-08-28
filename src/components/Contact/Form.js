@@ -5,6 +5,8 @@ import Field from './Field';
 import firebase from 'firebase';
 import {notify} from 'react-notify-toast';
 
+import './contact.css'
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyAidhjt2l_dd0hCmxZWUX6fmBBcgFSQVkY",
@@ -143,7 +145,7 @@ class Form extends Component {
               value={this.state.message}
             />
             {/* Submit button */}
-            <button type="submit" email="jamkelley22@gmail.com">
+            <button id='submitBtn' type="submit" email="jamkelley22@gmail.com">
               Send
             </button>
         </form>

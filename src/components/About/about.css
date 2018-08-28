@@ -5,8 +5,9 @@
   flex-direction: column;
   justify-content: center;
 }
-#description {
-  width: 500px;
+
+#description p {
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
 }
