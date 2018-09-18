@@ -3,7 +3,6 @@
   flex-direction: row;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
   padding: 0px;
   min-height: 520px;
 }
@@ -20,6 +19,7 @@
   background-color: rgb(37, 38, 39);
   width: 100%;
   overflow-y: auto;
+  display: block !important;
 }
 
 #particles > div {

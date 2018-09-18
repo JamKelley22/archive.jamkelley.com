@@ -7,7 +7,7 @@ class Resume extends React.Component {
   render() {
     return (
       <div id='resumeDoc'>
-        <Document file="Jameel.pdf">
+        <Document id='resume' file="Jameel_v2.pdf">
           <Page pageNumber={1} scale={1}/>
         </Document>
       </div>

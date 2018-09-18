@@ -1,7 +1,10 @@
 #projectList {
   overflow-y: auto;
-  height: 80vh;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#projectTile {
+  scroll-snap-type: y mandatory;
 }
