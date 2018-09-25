@@ -72,6 +72,7 @@ class Form extends Component {
   }
 
   showNotification(content,type) {
+    console.log(content);
     notify.show(content,type);
   }
 
@@ -91,9 +92,31 @@ class Form extends Component {
   }
 
   handleSubmit(e) {
-    console.log("Name: " + this.state.name);
-    console.log("Email: " + this.state.email);
-    console.log("Message: " + this.state.message);
+    e.preventDefault();
+    //console.log("Name: " + this.state.name);
+    //console.log("Email: " + this.state.email);
+    //console.log("Message: " + this.state.message);
+
+    let errorMessage = 'Please enter: '
+    let missingField = false;
+
+    if(this.state.name === '') {
+      errorMessage += '\nName';
+      missingField = true;
+    }
+    if(this.state.email === '') {
+      errorMessage += '\nEmail';
+      missingField = true;
+    }
+    if(this.state.message === '') {
+      errorMessage += '\nMessage';
+      missingField = true;
+    }
+
+    if(missingField) {
+      this.showNotification(errorMessage, 'error')
+      return;
+    }
 
     this.saveMessage();
     this.sendEmail(this.showNotification);
@@ -117,7 +140,6 @@ class Form extends Component {
       email: '',
       message: '',
     });
-    e.preventDefault();
   }
 
   render() {
@@ -140,8 +162,7 @@ class Form extends Component {
             <Field
               label="Message"
               onChange={(event) => this.updateField('message', event.target.value)}
-              /* This should be written like 'textarea' */
-              textarea={true}
+              isTextArea={true}
               value={this.state.message}
             />
             {/* Submit button */}

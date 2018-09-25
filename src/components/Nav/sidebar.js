@@ -36,25 +36,26 @@ class Sidebar extends React.Component {
             <i id='icon' className="fas fa-home"/>
             <p id='hoverInfo'>Home</p>
           </NavLink>
+          {/*
+            <NavLink id='link' activeClassName='is-active' to={routes.ABOUT}>
+              <i id='icon' className="fas fa-user"/>
+              <p id='hoverInfo'>About</p>
+            </NavLink>
 
-          <NavLink id='link' activeClassName='is-active' to={routes.ABOUT}>
-            <i id='icon' className="fas fa-user"/>
-            <p id='hoverInfo'>About</p>
-          </NavLink>
+            <NavLink id='link' activeClassName='is-active' to={routes.SKILLS}>
+              <i id='icon' className="fas fa-cog"/>
+              <p id='hoverInfo'>Skills</p>
+            </NavLink>
+
+            <NavLink id='link' activeClassName='is-active' to={routes.WORK}>
+              <i id='icon' className="fas fa-eye"/>
+              <p id='hoverInfo'>Work</p>
+            </NavLink>
+          */}
 
           <NavLink id='link' activeClassName='is-active' to={routes.BLOG}>
             <i id='icon' className="fas fa-clock"/>
             <p id='hoverInfo'>Blog</p>
-          </NavLink>
-
-          <NavLink id='link' activeClassName='is-active' to={routes.SKILLS}>
-            <i id='icon' className="fas fa-cog"/>
-            <p id='hoverInfo'>Skills</p>
-          </NavLink>
-
-          <NavLink id='link' activeClassName='is-active' to={routes.WORK}>
-            <i id='icon' className="fas fa-eye"/>
-            <p id='hoverInfo'>Work</p>
           </NavLink>
 
           <NavLink id='link' activeClassName='is-active' to={routes.PROJECTS}>

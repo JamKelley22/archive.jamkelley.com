@@ -28,7 +28,7 @@ class App extends React.Component {
   componentDidMount() {
     this.getData()
     .then((response) => {
-      console.log(response.getFortuneCookie);
+      //console.log(response.getFortuneCookie);
     })
 /*
     fetch("http://localhost:3001/graphql?query={getFortuneCookie}")

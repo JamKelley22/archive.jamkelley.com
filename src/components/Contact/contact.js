@@ -6,7 +6,7 @@ import './contact.css';
 class Contact extends React.Component {
   render() {
     return (
-      <div>
+      <div id='contactForm'>
         <h1 style={{color: "white"}}>Contact Me</h1>
         <Form />
       </div>

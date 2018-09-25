@@ -5,13 +5,30 @@ import PropTypes from 'prop-types';
 
 // Stateless component / Functional component
 const Field = (props) => (
-  <div>
-    <label style={{color:"white"}}>{props.label}</label>
-    <input
-      onChange={props.onChange}
-      type={props.textarea ? 'textarea' : 'text'}
-      value={props.value}
-    />
+  <div id='field'>
+    <label id='fieldLabel' style={{color:"white"}}>{props.label}</label>
+    {
+      props.isTextArea
+      &&
+      <textarea
+        id='fieldInput'
+        cols="40"
+        rows="5"
+        onChange={props.onChange}
+        type={props.textarea ? 'textarea' : 'text'}
+        value={props.value}
+      ></textarea>
+    }
+    {
+      !props.isTextArea
+      &&
+      <input
+        id='fieldInput'
+        onChange={props.onChange}
+        type={props.textarea ? 'textarea' : 'text'}
+        value={props.value}
+      />
+    }
   </div>
 );
 
