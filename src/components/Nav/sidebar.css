@@ -194,3 +194,8 @@
   }
 
 }
+
+.devTo img{
+  filter: invert(100%);
+
+}

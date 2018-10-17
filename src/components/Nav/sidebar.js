@@ -72,6 +72,11 @@ class Sidebar extends React.Component {
             <i id='icon' className="fas fa-file-alt"/>
             <p id='hoverInfo'>Resume</p>
           </NavLink>
+
+          <a className='devTo' href="https://dev.to/jamkelley22">
+            <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Jameel Kelley's DEV Profile"/>
+          </a>
+
         </div>
         <div id='elipses'>
           <button id='elipsesLink' onClick={(e) => this.toggleSocialMediaVisible(e)}>
