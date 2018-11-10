@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "KFZoo.data.unityweb",
+"asmCodeUrl": "KFZoo.asm.code.unityweb",
+"asmMemoryUrl": "KFZoo.asm.memory.unityweb",
+"asmFrameworkUrl": "KFZoo.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#36474F"
+}

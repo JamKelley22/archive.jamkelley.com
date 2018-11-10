@@ -1,0 +1,8 @@
+#proPic { 
+  display: none;
+}
+#myPic:hover {
+  -ms-transform: scale(1.3, 1.3); /* IE 9 */
+    -webkit-transform: scale(1.3, 1.3); /* Safari */
+    transform: scale(1.3, 1.3);
+}
