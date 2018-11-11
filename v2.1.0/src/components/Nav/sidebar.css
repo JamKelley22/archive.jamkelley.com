@@ -1,0 +1,202 @@
+#allItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+
+}
+
+#icons {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+#icon {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+#ebetPic {
+  width: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#top {
+  background-color: white;
+  overflow: hidden;
+}
+
+#hoverInfo {
+  text-align: center;
+  margin-top: -30px;
+  opacity: 0;
+  text-decoration: none;
+  color: rgb(8, 253, 216);
+}
+
+#link {
+  text-decoration: none;
+  color: white;
+  min-height: 50px;
+}
+
+#link:hover > #icon{
+  opacity: 0;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-duration: .2s;
+}
+
+#link:hover > #hoverInfo{
+ opacity: 1;
+ -webkit-animation-name: fadeIn;
+ -webkit-animation-duration: .2s;
+}
+
+#elipsesLink {
+  background-color: #181818;
+  border: 0px;
+  outline: none;
+}
+
+
+@-webkit-keyframes fadeIn {
+  0%   {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadeOut {
+  0%   {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.is-active {
+  color: rgb(8, 253, 216) !important;
+}
+
+#mediaIcon {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 25px;
+  color: white;
+  display: block;
+  margin: auto;
+}
+
+#elipses {
+  z-index: 30;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#elipses:hover ~ #circle {
+  display: block;
+}
+
+#elipses:hover > #mediaIcon {
+  color: rgb(8, 253, 216);
+}
+
+#circle:hover {
+  display: block;
+}
+
+#icon0 {
+  -webkit-animation-name: circleIcon0Move;
+  background-color: #181818;
+  border-radius: 50%;
+  border: 2px solid #181818;
+}
+
+#icon45 {
+  -webkit-animation-name: circleIcon45Move;
+  border: 2px solid #181818;
+}
+
+#iconN45 {
+  -webkit-animation-name: circleIconN45Move;
+  border: 2px solid #181818;
+}
+
+.circleIcon {
+  font-size: 22px;
+  color: white;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-duration: .2s;
+}
+
+.circleIcon:hover {
+  color: rgb(8, 253, 216);
+}
+
+@-webkit-keyframes circleIcon0Move {
+  0%   {transform: translate(0px);}
+  100% {transform: translate(60px);}
+}
+
+@-webkit-keyframes circleIcon45Move {
+  0%   {transform: rotate(45deg) translate(0px);}
+  100% {transform: rotate(-45deg) translate(60px);}
+}
+
+@-webkit-keyframes circleIconN45Move {
+  0%   {transform: rotate(-45deg) translate(0px);}
+  100% {transform: rotate(45deg) translate(60px);}
+}
+
+.circle {
+  display: none;
+  position: fixed;
+  border-radius: 50%;
+  background-color: rgb(24, 24, 24);
+  width: 120px;
+  height: 120px;
+  bottom: 0;
+  left: -20px;
+  z-index: 20;
+}
+
+.circle div {
+  display: block;
+  position: absolute;
+  top: 50%; left: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  #hoverInfo {
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .circle {
+
+  }
+
+  #icon0 {
+
+  }
+
+  #icon45 {
+
+  }
+
+  #iconN45 {
+
+  }
+
+}
+
+.devTo img{
+  filter: invert(100%);
+
+}

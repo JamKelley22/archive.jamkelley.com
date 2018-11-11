@@ -1,0 +1,10 @@
+#projectList {
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#projectTile {
+  scroll-snap-type: y mandatory;
+}
