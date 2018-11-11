@@ -1,11 +1,14 @@
 {
-  "main.css": "static/css/main.6f56d801.css",
-  "main.css.map": "static/css/main.6f56d801.css.map",
-  "main.js": "static/js/main.47b96f08.js",
-  "main.js.map": "static/js/main.47b96f08.js.map",
-  "static/js/0.652f23eb.chunk.js": "static/js/0.652f23eb.chunk.js",
-  "static/js/0.652f23eb.chunk.js.map": "static/js/0.652f23eb.chunk.js.map",
-  "static/js/1.5d53d9a4.chunk.js": "static/js/1.5d53d9a4.chunk.js",
-  "static/js/1.5d53d9a4.chunk.js.map": "static/js/1.5d53d9a4.chunk.js.map",
-  "static\\media\\ebet.png": "static/media/ebet.deb089b0.png"
+  "main.css": "./static/css/main.27c75969.chunk.css",
+  "main.js": "./static/js/main.ee798b58.chunk.js",
+  "main.js.map": "./static/js/main.ee798b58.chunk.js.map",
+  "static/js/1.1f91f300.chunk.js": "./static/js/1.1f91f300.chunk.js",
+  "static/js/1.1f91f300.chunk.js.map": "./static/js/1.1f91f300.chunk.js.map",
+  "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
+  "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
+  "static/media/ebet.png": "./static/media/ebet.deb089b0.png",
+  "static/css/main.27c75969.chunk.css.map": "./static/css/main.27c75969.chunk.css.map",
+  "index.html": "./index.html",
+  "precache-manifest.ddb26e934856afa6a4464705a54cbc92.js": "./precache-manifest.ddb26e934856afa6a4464705a54cbc92.js",
+  "service-worker.js": "./service-worker.js"
 }
