@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "http://archive.jamkelley.com/v2.0.0",
-  "start_url": "http://archive.jamkelley.com/v2.0.0",
   "dependencies": {
     "brain.js": "^1.1.2",
     "contentful": "^6.1.0",
