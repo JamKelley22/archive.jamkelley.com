@@ -1,14 +1,14 @@
 {
-  "main.css": "./v2.1.0/static/css/main.e3def82d.chunk.css",
-  "main.js": "./v2.1.0/static/js/main.7969db7a.chunk.js",
-  "main.js.map": "./v2.1.0/static/js/main.7969db7a.chunk.js.map",
-  "static/js/1.e25b6919.chunk.js": "./v2.1.0/static/js/1.e25b6919.chunk.js",
-  "static/js/1.e25b6919.chunk.js.map": "./v2.1.0/static/js/1.e25b6919.chunk.js.map",
-  "runtime~main.js": "./v2.1.0/static/js/runtime~main.6b9b08f3.js",
-  "runtime~main.js.map": "./v2.1.0/static/js/runtime~main.6b9b08f3.js.map",
-  "static/media/ebet.png": "./v2.1.0/static/media/ebet.deb089b0.png",
-  "static/css/main.e3def82d.chunk.css.map": "./v2.1.0/static/css/main.e3def82d.chunk.css.map",
-  "index.html": "./v2.1.0/index.html",
-  "precache-manifest.3cc06da1c823cb3d5e780d5551ce29bb.js": "./v2.1.0/precache-manifest.3cc06da1c823cb3d5e780d5551ce29bb.js",
-  "service-worker.js": "./v2.1.0/service-worker.js"
+  "main.css": "./static/css/main.e3def82d.chunk.css",
+  "main.js": "./static/js/main.74eeeea8.chunk.js",
+  "main.js.map": "./static/js/main.74eeeea8.chunk.js.map",
+  "static/js/1.db15df53.chunk.js": "./static/js/1.db15df53.chunk.js",
+  "static/js/1.db15df53.chunk.js.map": "./static/js/1.db15df53.chunk.js.map",
+  "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
+  "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
+  "static/media/ebet.png": "./static/media/ebet.deb089b0.png",
+  "static/css/main.e3def82d.chunk.css.map": "./static/css/main.e3def82d.chunk.css.map",
+  "index.html": "./index.html",
+  "precache-manifest.10d30f8ee99e385ef952329ac61a48a5.js": "./precache-manifest.10d30f8ee99e385ef952329ac61a48a5.js",
+  "service-worker.js": "./service-worker.js"
 }
