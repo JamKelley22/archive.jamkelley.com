@@ -11,7 +11,7 @@
     "contentful": "^6.1.0",
     "emailjs": "^2.0.0",
     "firebase": "^4.12.1",
-    "moment": "^2.22.1",
+    "moment": "^2.29.2",
     "prop-types": "^15.6.1",
     "react": "^16.6.1",
     "react-async-script": "^0.9.1",
